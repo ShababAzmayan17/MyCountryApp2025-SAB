@@ -6,15 +6,15 @@ header, footer {
     box-shadow: 0 2px 10px rgba(94, 81, 67, 0.3);
     position: relative;
   }
-
-header h1 {
+  
+  header h1 {
     margin: 0;
     font-size: 2.2rem;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
     animation: titlePulse 2s infinite alternate;
   }
-
-body {
+  
+  body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #f5f1e8 0%, #e8e0d3 100%);
@@ -24,7 +24,7 @@ body {
     color: #3a3a3a;
     transition: background 0.5s ease;
   }
-
+  
   main {
     flex: 1;
     padding: 2.5rem;
@@ -32,13 +32,25 @@ body {
     margin: auto;
     width: 90%;
   }
-
-.search-bar:focus-within {
+  
+  .search-bar {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 2.5rem;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 50px;
+    overflow: hidden;
+    background: white;
+    padding: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .search-bar:focus-within {
     box-shadow: 0 6px 20px rgba(94, 81, 67, 0.2);
     transform: translateY(-2px);
   }
   
-input {
+  input {
     padding: 12px 20px;
     font-size: 1rem;
     border: none;
@@ -49,11 +61,11 @@ input {
     color: #333;
   }
   
-input::placeholder {
+  input::placeholder {
     color: #999;
   }
   
-button {
+  button {
     padding: 12px 25px;
     font-size: 1rem;
     background: #5e5143;
@@ -66,18 +78,18 @@ button {
     box-shadow: 0 2px 5px rgba(94, 81, 67, 0.4);
   }
   
-button:hover {
+  button:hover {
     background: #4a4033;
     transform: translateY(-2px);
     box-shadow: 0 4px 8px rgba(94, 81, 67, 0.6);
   }
   
-button:active {
+  button:active {
     transform: translateY(1px);
     box-shadow: 0 1px 3px rgba(75, 108, 183, 0.4);
   }
-
-.card {
+  
+  .card {
     background: white;
     padding: 25px;
     border-radius: 16px;
@@ -88,29 +100,29 @@ button:active {
     opacity: 0;
   }
   
-.card:hover {
+  .card:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
     transform: translateY(-5px);
   }
   
-.grid {
+  .grid {
     display: flex;
     gap: 25px;
     flex-wrap: wrap;
   }
   
-.country-info {
+  .country-info {
     flex: 1;
     min-width: 280px;
   }
   
-.flag-container {
+  .flag-container {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
-.flag {
+  .flag {
     width: 220px;
     height: auto;
     border-radius: 10px;
@@ -119,56 +131,56 @@ button:active {
     margin-bottom: 15px;
   }
   
-.flag:hover {
+  .flag:hover {
     transform: scale(1.05);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   }
   
-@keyframes fadeIn {
+  @keyframes fadeIn {
     from { opacity: 0; }
     to { opacity: 1; }
   }
   
-@keyframes slideUp {
+  @keyframes slideUp {
     from { transform: translateY(30px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
   }
   
-@keyframes fadeInCard {
+  @keyframes fadeInCard {
     from { opacity: 0; transform: scale(0.98); }
     to { opacity: 1; transform: scale(1); }
   }
   
-@keyframes titlePulse {
+  @keyframes titlePulse {
     from { transform: scale(1); }
     to { transform: scale(1.03); }
-  } 
-
-.card h2 {
+  }
+  
+  .card h2 {
     color: #5e5143;
     margin-top: 0;
     border-bottom: 2px dashed rgba(94, 81, 67, 0.3);
     padding-bottom: 10px;
   }
   
-.card p {
+  .card p {
     margin: 8px 0;
     line-height: 1.6;
   }
   
-.fade-in {
+  .fade-in {
     animation: fadeIn 0.7s ease-in-out forwards;
   }
   
-.slide-up {
+  .slide-up {
     animation: slideUp 0.7s ease-in-out forwards;
   }
   
-.fade-in-card {
+  .fade-in-card {
     animation: fadeInCard 0.7s ease-in-out forwards;
   }
-
-.error-message {
+  
+  .error-message {
     color: #e74c3c;
     font-weight: bold;
     text-align: center;
@@ -178,7 +190,7 @@ button:active {
     border-left: 4px solid #e74c3c;
   }
   
-.loading {
+  .loading {
     text-align: center;
     font-size: 1.5rem;
     color: #5e5143;
@@ -186,7 +198,7 @@ button:active {
     position: relative;
   }
   
-.loading::before {
+  .loading::before {
     content: "";
     display: inline-block;
     width: 20px;
@@ -198,29 +210,29 @@ button:active {
     vertical-align: middle;
     margin-right: 10px;
   }
-
-@keyframes spinner {
+  
+  @keyframes spinner {
     to { transform: rotate(360deg); }
   }
   
-.info-group {
+  .info-group {
     margin-bottom: 15px;
   }
   
-.info-label {
+  .info-label {
     font-weight: bold;
     color: #5e5143;
     margin-right: 5px;
   }
   
-.currency-info {
+  .currency-info {
     display: flex;
     align-items: center;
     gap: 10px;
     flex-wrap: wrap;
   }
   
-.currency-box {
+  .currency-box {
     background: #f8f5ee;
     padding: 8px 12px;
     border-radius: 8px;
@@ -228,7 +240,7 @@ button:active {
     font-size: 0.9rem;
   }
   
-@media (max-width: 768px) {
+  @media (max-width: 768px) {
     .grid {
       flex-direction: column;
     }
@@ -242,18 +254,18 @@ button:active {
     }
   }
   
-@media (max-width: 600px) {
+  @media (max-width: 600px) {
     .search-bar {
       flex-direction: column;
       border-radius: 16px;
       padding: 10px;
     }
     
-input, button {
+    input, button {
       width: 100%;
     }
     
-header h1 {
+    header h1 {
       font-size: 1.8rem;
     }
   }

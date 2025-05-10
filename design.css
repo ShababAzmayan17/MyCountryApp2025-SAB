@@ -32,3 +32,48 @@ body {
     margin: auto;
     width: 90%;
   }
+
+.search-bar:focus-within {
+    box-shadow: 0 6px 20px rgba(94, 81, 67, 0.2);
+    transform: translateY(-2px);
+  }
+  
+input {
+    padding: 12px 20px;
+    font-size: 1rem;
+    border: none;
+    flex: 1;
+    border-radius: 40px;
+    outline: none;
+    background: transparent;
+    color: #333;
+  }
+  
+input::placeholder {
+    color: #999;
+  }
+  
+button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background: #5e5143;
+    color: white;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: bold;
+    box-shadow: 0 2px 5px rgba(94, 81, 67, 0.4);
+  }
+  
+button:hover {
+    background: #4a4033;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(94, 81, 67, 0.6);
+  }
+  
+button:active {
+    transform: translateY(1px);
+    box-shadow: 0 1px 3px rgba(75, 108, 183, 0.4);
+  }
+  

@@ -198,3 +198,62 @@ button:active {
     vertical-align: middle;
     margin-right: 10px;
   }
+
+@keyframes spinner {
+    to { transform: rotate(360deg); }
+  }
+  
+.info-group {
+    margin-bottom: 15px;
+  }
+  
+.info-label {
+    font-weight: bold;
+    color: #5e5143;
+    margin-right: 5px;
+  }
+  
+.currency-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+  }
+  
+.currency-box {
+    background: #f8f5ee;
+    padding: 8px 12px;
+    border-radius: 8px;
+    border-left: 3px solid #8c7a64;
+    font-size: 0.9rem;
+  }
+  
+@media (max-width: 768px) {
+    .grid {
+      flex-direction: column;
+    }
+    
+    .flag {
+      width: 180px;
+    }
+    
+    .card {
+      padding: 20px;
+    }
+  }
+  
+@media (max-width: 600px) {
+    .search-bar {
+      flex-direction: column;
+      border-radius: 16px;
+      padding: 10px;
+    }
+    
+input, button {
+      width: 100%;
+    }
+    
+header h1 {
+      font-size: 1.8rem;
+    }
+  }

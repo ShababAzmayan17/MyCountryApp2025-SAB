@@ -1,0 +1,8 @@
+header, footer {
+    background: linear-gradient(90deg, #8c7a64 0%, #5e5143 100%);
+    color: white;
+    text-align: center;
+    padding: 1.2rem;
+    box-shadow: 0 2px 10px rgba(94, 81, 67, 0.3);
+    position: relative;
+  }

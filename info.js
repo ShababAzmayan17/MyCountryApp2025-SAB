@@ -70,3 +70,70 @@ function searchCountry() {
           console.error(error);
         });
     }
+
+function showError(message) {
+        const resultDiv = document.getElementById('result');
+        resultDiv.innerHTML = `<div class="error-message fade-in">${message}</div>`;
+      }
+      
+function displayCountryInfo(country, resultDiv) {
+        const card = document.createElement('div');
+        card.className = 'card';
+        const countryName = country.name.common;
+        const officialName = country.name.official;
+        const capital = country.capital && country.capital.length > 0 ? country.capital[0] : 'N/A';
+        const region = country.region || 'N/A';
+        const subregion = country.subregion || 'N/A';
+        const population = country.population ? country.population.toLocaleString() : 'N/A';
+        const flagUrl = country.flags.png;
+        const flagAlt = country.flags.alt || `Flag of ${countryName}`;
+        
+        let languages = 'N/A';
+        if (country.languages && Object.keys(country.languages).length > 0) {
+          languages = Object.values(country.languages).join(', ');
+        }
+        
+        let currencyHtml = 'N/A';
+        if (country.currencies && Object.keys(country.currencies).length > 0) {
+          currencyHtml = Object.entries(country.currencies).map(([code, currency]) => {
+            return `<div class="currency-box">${code}: ${currency.name} (${currency.symbol || 'N/A'})</div>`;
+          }).join('');
+        }
+        
+        const timezones = country.timezones ? country.timezones.join(', ') : 'N/A';
+        
+        card.innerHTML = `
+          <div class="grid">
+            <div class="flag-container">
+              <img src="${flagUrl}" class="flag" alt="${flagAlt}">
+              <p><span class="info-label">Country Code:</span> ${country.cca2}</p>
+            </div>
+            <div class="country-info">
+              <h2>${countryName}</h2>
+              <p><span class="info-label">Official Name:</span> ${officialName}</p>
+              <div class="info-group">
+                <p><span class="info-label">Capital:</span> ${capital}</p>
+                <p><span class="info-label">Region:</span> ${region} (${subregion})</p>
+                <p><span class="info-label">Population:</span> ${population}</p>
+              </div>
+              <div class="info-group">
+                <p><span class="info-label">Languages:</span> ${languages}</p>
+              </div>
+              <div class="info-group">
+                <p><span class="info-label">Currencies:</span></p>
+                <div class="currency-info">${currencyHtml}</div>
+              </div>
+              <div class="info-group">
+                <p><span class="info-label">Time Zones:</span> ${timezones}</p>
+              </div>
+            </div>
+          </div>
+        `;
+        
+        resultDiv.appendChild(card);
+        
+        setTimeout(() => {
+          card.style.opacity = "1";
+          card.classList.add('fade-in-card');
+        }, 100);
+      }

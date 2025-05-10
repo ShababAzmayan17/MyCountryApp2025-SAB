@@ -76,4 +76,70 @@ button:active {
     transform: translateY(1px);
     box-shadow: 0 1px 3px rgba(75, 108, 183, 0.4);
   }
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+    margin-bottom: 2.5rem;
+    border-top: 4px solid #8c7a64;
+    transition: all 0.3s ease;
+    opacity: 0;
+  }
   
+.card:hover {
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+    transform: translateY(-5px);
+  }
+  
+.grid {
+    display: flex;
+    gap: 25px;
+    flex-wrap: wrap;
+  }
+  
+.country-info {
+    flex: 1;
+    min-width: 280px;
+  }
+  
+.flag-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+.flag {
+    width: 220px;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    margin-bottom: 15px;
+  }
+  
+.flag:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+  }
+  
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  
+@keyframes slideUp {
+    from { transform: translateY(30px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+  }
+  
+@keyframes fadeInCard {
+    from { opacity: 0; transform: scale(0.98); }
+    to { opacity: 1; transform: scale(1); }
+  }
+  
+@keyframes titlePulse {
+    from { transform: scale(1); }
+    to { transform: scale(1.03); }
+  } 
